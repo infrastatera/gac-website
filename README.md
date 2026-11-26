@@ -1,93 +1,51 @@
 # GAC Door Handles Website
 
-## 📁 File Structure
+Static website for GAC Door Handles, hosted on GitHub Pages, with content editable in [Pages CMS](https://pagescms.org).
+
+## How it is built
 
 ```
 gac-website/
-├── index.html              ← Homepage
-├── pull-handles.html       ← Pull Handles page
-├── plate-handles.html      ← Plate Handles page
-├── rose-handles.html       ← Rose Handles page
-├── knobs.html              ← Knobs page
-├── knockers.html           ← Knockers page
-├── window-handles.html     ← Window Handles & Accessories page
-├── contact.html            ← Contact page
-├── css/
-│   └── style.css           ← All styles
+├── content/              ← ⭐ ALL EDITABLE CONTENT LIVES HERE
+│   ├── site.json         ← hero, about, finishes, contact details, social links, footer
+│   └── catalog.json      ← the 6 categories and their products
+├── .pages.yml            ← describes the editing forms shown in Pages CMS
 ├── js/
-│   ├── main.js             ← Nav, lightbox, animations
-│   └── products.js         ← ⭐ ADD YOUR PRODUCTS HERE
-├── images/
-│   ├── logo.png            ← Your logo
-│   ├── favicon.png         ← Browser tab icon
-│   ├── hero-bg.jpg         ← Homepage hero background
-│   ├── about.jpg           ← About section image
-│   ├── categories/         ← One image per category (shown on homepage)
-│   │   ├── pull-handles.jpg
-│   │   ├── plate-handles.jpg
-│   │   ├── rose-handles.jpg
-│   │   ├── knobs.jpg
-│   │   ├── knockers.jpg
-│   │   └── window-handles.jpg
-│   └── products/           ← ⭐ YOUR PRODUCT IMAGES GO HERE
-│       ├── pull-handles/
-│       ├── plate-handles/
-│       ├── rose-handles/
-│       ├── knobs/
-│       ├── knockers/
-│       └── window-handles/
-├── admin/                  ← Decap CMS (optional visual editor)
-│   ├── index.html
-│   └── config.yml
-└── netlify.toml            ← Netlify settings
+│   ├── content.js        ← reads content/*.json and fills the pages
+│   └── main.js           ← navigation, lightbox, animations
+├── css/style.css         ← all styles
+├── images/               ← logo, hero, about, categories/, products/<category>/
+└── *.html                ← one page per category + home + contact (layout only)
 ```
 
----
+**Content is separate from layout.** The HTML pages hold the design. Places to fill are marked with attributes
+(`data-text`, `data-href`, `data-src`, `data-render`), and `js/content.js` fills them from the JSON files.
+The text already in the HTML is a fallback if the JSON can't load.
 
-## ➕ HOW TO ADD PRODUCT IMAGES
+## Editing content (no code)
 
-### Method 1 — Edit the JS file directly (simple, fast)
+1. Go to <https://app.pagescms.org> and sign in (GitHub, or the email invitation for collaborators).
+2. Open **infrastatera/gac-website**.
+3. **Products**: add, remove, reorder, or rename products and upload photos, per category.
+   **Website text & contact**: hero, about, finishes, phones, addresses, social links.
+4. Click **Save**. Pages CMS commits the change, and GitHub Pages publishes it in about 1 minute.
 
-1. Open `js/products.js` in any text editor (Notepad, VS Code, etc.)
-2. Find the category you want (e.g. `"pull-handles"`)
-3. Add a new line inside its array:
+Every save is a Git commit, so any change can be undone from the repo history.
 
-```js
-{ name: "Pull Handle PH-10", image: "images/products/pull-handles/ph-10.jpg" },
+## Adding an editor without a GitHub account
+
+In Pages CMS, open the repo → **Settings → Collaborators** and invite their email address.
+They can edit content and photos but can't change `.pages.yml` or invite other people.
+
+## Adding a new category
+
+Categories are fixed in the forms because each has its own page. To add one:
+copy a category page (e.g. `knobs.html`), change `window.CATEGORY` and the `data-text` keys,
+add the category to `content/catalog.json` and `.pages.yml`, and add links in the nav/footer of every page.
+
+## Testing locally
+
 ```
-
-4. Copy your image file to `images/products/pull-handles/ph-10.jpg`
-5. Done! The product will appear on the page automatically.
-
-### Method 2 — Use the visual CMS (no code needed)
-
-After deploying to Netlify:
-1. Enable **Netlify Identity** in your Netlify dashboard
-2. Enable **Git Gateway** in Identity → Services
-3. Go to `yoursite.com/admin`
-4. Log in and use the visual interface to add/edit products
-
----
-
-## 🚀 HOW TO DEPLOY FOR FREE (Netlify)
-
-1. Go to [netlify.com](https://netlify.com) and create a free account
-2. Click **"Add new site" → "Deploy manually"**
-3. Drag the entire `gac-website` folder onto the page
-4. Your site is live in ~30 seconds!
-5. To connect your custom domain: Site settings → Domain management → Add custom domain
-
-### To update the site later:
-- Make changes to your files
-- Go back to Netlify → Deploys → Drag & drop the folder again
-
----
-
-## 🌐 Estimated Annual Cost
-
-| Item | Cost |
-|------|------|
-| Netlify hosting | **Free** |
-| Custom domain (e.g. Namecheap/OVH) | ~$10–15/year |
-| **Total** | **~$10–15/year** (vs $100 on Durable) |
-
+python3 -m http.server 8000
+```
+Open <http://localhost:8000>. (Opening the HTML file directly won't load the JSON. A local server is needed.)

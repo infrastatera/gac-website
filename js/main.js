@@ -47,18 +47,18 @@ if (lightbox) {
   });
 }
 
+// Connects product cards to the lightbox and animates them in.
+// content.js calls this after it has built the cards from catalog.json.
 function initProductCards() {
   const cards = document.querySelectorAll('.product-card');
   const images = Array.from(cards).map(card => ({
     src: card.dataset.imgSrc || card.querySelector('img')?.src || '',
     name: card.dataset.name || card.querySelector('.product-card-name')?.textContent || ''
   }));
-  cards.forEach((card, i) => { card.addEventListener('click', () => openLightbox(images, i)); });
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => openLightbox(images, i));
+    card.style.opacity = '0'; card.style.transform = 'translateY(24px)';
+    card.style.transition = `opacity 0.5s ease ${i * 0.06}s, transform 0.5s ease ${i * 0.06}s`;
+    setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 80 + i * 40);
+  });
 }
-initProductCards();
-
-document.querySelectorAll('.product-card').forEach((card, i) => {
-  card.style.opacity = '0'; card.style.transform = 'translateY(24px)';
-  card.style.transition = `opacity 0.5s ease ${i * 0.06}s, transform 0.5s ease ${i * 0.06}s`;
-  setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 80 + i * 40);
-});

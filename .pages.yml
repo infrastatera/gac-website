@@ -1,0 +1,183 @@
+# Pages CMS configuration — https://pagescms.org
+#
+# This file describes the editing forms your dad sees at app.pagescms.org.
+# Each "content" entry points to one JSON file, and its "fields" mirror
+# the keys inside that file. If you rename a key here, rename it in the JSON
+# and in js/content.js too.
+
+# Where uploaded photos are saved in the repo (input) and the path written
+# into the JSON (output). js/content.js strips the leading "/" when it reads it.
+media:
+  input: images
+  output: /images
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  # ---------------------------------------------------------------- Products
+  - name: catalog
+    label: Products
+    type: file
+    path: content/catalog.json
+    format: json
+    fields:
+      # One block per category. The 6 categories are fixed because each one
+      # has its own page (knobs.html, etc.); your dad edits what is inside them.
+      - name: pull-handles
+        label: Pull Handles
+        type: object
+        fields:
+          - { name: title, label: Category name, type: string, required: true }
+          - { name: description, label: Short description, type: text }
+          - { name: cover, label: Cover photo (home page), type: image, options: { path: categories } }
+          - name: products
+            label: Products
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - { name: name, label: Product name / reference, type: string, required: true }
+              - { name: image, label: Photo, type: image, required: true, options: { path: products } }
+      - name: plate-handles
+        label: Plate Handles
+        type: object
+        fields:
+          - { name: title, label: Category name, type: string, required: true }
+          - { name: description, label: Short description, type: text }
+          - { name: cover, label: Cover photo (home page), type: image, options: { path: categories } }
+          - name: products
+            label: Products
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - { name: name, label: Product name / reference, type: string, required: true }
+              - { name: image, label: Photo, type: image, required: true, options: { path: products } }
+      - name: rose-handles
+        label: Rose Handles
+        type: object
+        fields:
+          - { name: title, label: Category name, type: string, required: true }
+          - { name: description, label: Short description, type: text }
+          - { name: cover, label: Cover photo (home page), type: image, options: { path: categories } }
+          - name: products
+            label: Products
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - { name: name, label: Product name / reference, type: string, required: true }
+              - { name: image, label: Photo, type: image, required: true, options: { path: products } }
+      - name: knobs
+        label: Knobs
+        type: object
+        fields:
+          - { name: title, label: Category name, type: string, required: true }
+          - { name: description, label: Short description, type: text }
+          - { name: cover, label: Cover photo (home page), type: image, options: { path: categories } }
+          - name: products
+            label: Products
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - { name: name, label: Product name / reference, type: string, required: true }
+              - { name: image, label: Photo, type: image, required: true, options: { path: products } }
+      - name: knockers
+        label: Knockers
+        type: object
+        fields:
+          - { name: title, label: Category name, type: string, required: true }
+          - { name: description, label: Short description, type: text }
+          - { name: cover, label: Cover photo (home page), type: image, options: { path: categories } }
+          - name: products
+            label: Products
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - { name: name, label: Product name / reference, type: string, required: true }
+              - { name: image, label: Photo, type: image, required: true, options: { path: products } }
+      - name: window-handles
+        label: Window Handles & Accessories
+        type: object
+        fields:
+          - { name: title, label: Category name, type: string, required: true }
+          - { name: description, label: Short description, type: text }
+          - { name: cover, label: Cover photo (home page), type: image, options: { path: categories } }
+          - name: products
+            label: Products
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - { name: name, label: Product name / reference, type: string, required: true }
+              - { name: image, label: Photo, type: image, required: true, options: { path: products } }
+
+  # -------------------------------------------------------- Site text & contact
+  - name: site
+    label: Website text & contact
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: hero
+        label: Home page — top banner
+        type: object
+        fields:
+          - { name: eyebrow, label: Small line above the title, type: string }
+          - { name: title, label: Title, type: string, required: true }
+          - { name: highlight, label: Word of the title shown in italics, type: string }
+          - { name: text, label: Text under the title, type: text }
+          - { name: image, label: Background photo, type: image }
+      - name: about
+        label: Home page — About GAC
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: paragraphs, label: Paragraphs, type: text, list: true }
+          - { name: image, label: Photo, type: image }
+      - { name: finishes, label: Finishes, type: string, list: true }
+      - name: contact
+        label: Contact details
+        type: object
+        fields:
+          - { name: intro, label: Contact page intro, type: text }
+          - { name: email, label: Email, type: string }
+          - { name: whatsapp, label: WhatsApp number, type: string }
+          - { name: phones, label: Office phones, type: string, list: true }
+          - name: locations
+            label: Offices & locations
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - { name: label, label: Name (e.g. USA Office), type: string, required: true }
+              - { name: address, label: Address (optional), type: text }
+              - { name: phone, label: Phone — call & WhatsApp (optional), type: string }
+      - name: social
+        label: Social media links
+        type: object
+        fields:
+          - { name: facebook, label: Facebook URL, type: string }
+          - { name: instagram, label: Instagram URL, type: string }
+          - { name: linkedin, label: LinkedIn URL, type: string }
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - { name: description, label: Short description, type: text }
+          - { name: city, label: City (bottom right), type: string }
