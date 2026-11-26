@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "eyebrow": "Masterfully Crafted in Syria",
+    "title": "Designing Dream Interiors",
+    "highlight": "Dream",
+    "text": "Custom-made, elegant brass door handles and accessories with a variety of finishes to fit any room design.",
+    "image": "images/hero-bg.jpg"
+  },
+  "about": {
+    "title": "Designing Dream Interiors",
+    "paragraphs": [
+      "GAC Door Handles is the #1 interior design business in the Middle East. We offer custom-made brass door handles and accessories with a variety of finishes to fit any room design.",
+      "Our pieces are masterfully crafted and designed to be both elegant and durable. Each handle reflects decades of artisanal tradition combined with contemporary design sensibility."
+    ],
+    "image": "images/about.jpg"
+  },
+  "finishes": [
+    "Antique Silver",
+    "Antique Gold",
+    "Bronze",
+    "Polish Brass",
+    "Satin Brass",
+    "Satin Nickel"
+  ],
+  "contact": {
+    "intro": "We'd love to hear from you. Reach out to our team for inquiries, custom orders, or to find your nearest distributor.",
+    "email": "gachandles@gmail.com",
+    "whatsapp": "+963 944 334 550",
+    "phones": [
+      "+963 21 267 2702",
+      "+963 21 268 7591"
+    ],
+    "locations": [
+      {
+        "label": "Office Address",
+        "address": "Al Mouhafaza Street\nAleppo, Syria",
+        "phone": ""
+      },
+      {
+        "label": "Factory Address",
+        "address": "Industrial Zone, Al Breij\nAleppo, Syria",
+        "phone": ""
+      },
+      {
+        "label": "USA Office",
+        "address": "",
+        "phone": "+1 805 304 65 67"
+      },
+      {
+        "label": "Canada Office",
+        "address": "",
+        "phone": "+1 514 247 5618"
+      }
+    ]
+  },
+  "social": {
+    "facebook": "https://facebook.com/profile.php?id=100063660506355",
+    "instagram": "https://instagram.com/gac.doorhandles/?hl=fr",
+    "linkedin": "https://linkedin.com/company/gac-door-handles-manufacturing/"
+  },
+  "footer": {
+    "description": "Custom-made, elegant brass door handles and accessories. Masterfully crafted to be both elegant and durable.",
+    "city": "Aleppo, Syria"
+  }
+}

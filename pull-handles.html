@@ -29,13 +29,12 @@
 
 <div class="page-hero">
   <p class="section-eyebrow">GAC Collections</p>
-  <h1>Pull Handles</h1>
-  <p>Discover our stylish and durable pull handles, perfect for adding a touch of elegance to any door.</p>
+  <h1 data-text="catalog.pull-handles.title">Pull Handles</h1>
+  <p data-text="catalog.pull-handles.description">Discover our stylish and durable pull handles, perfect for adding a touch of elegance to any door.</p>
 </div>
 
 <section class="products-section" style="padding-top:4rem">
-  <div id="products-grid" class="products-grid">
-    <!-- Products are loaded from products.js data -->
+  <div id="products-grid" class="products-grid" data-render="products">
   </div>
 </section>
 
@@ -43,11 +42,11 @@
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="index.html" class="footer-logo">GAC Door Handles</a>
-      <p>Custom-made, elegant brass door handles and accessories. Masterfully crafted to be both elegant and durable.</p>
+      <p data-text="site.footer.description">Custom-made, elegant brass door handles and accessories. Masterfully crafted to be both elegant and durable.</p>
       <div class="footer-social">
-        <a href="https://facebook.com/profile.php?id=100063660506355" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-        <a href="https://instagram.com/gac.doorhandles/?hl=fr" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="https://linkedin.com/company/gac-door-handles-manufacturing/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a data-href="site.social.facebook" href="https://facebook.com/profile.php?id=100063660506355" target="_blank" rel="noopener" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a data-href="site.social.instagram" href="https://instagram.com/gac.doorhandles/?hl=fr" target="_blank" rel="noopener" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a data-href="site.social.linkedin" href="https://linkedin.com/company/gac-door-handles-manufacturing/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
       </div>
     </div>
     <div class="footer-col">
@@ -63,7 +62,7 @@
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
-      <address>
+      <address data-render="footerContact">
         <a href="mailto:gachandles@gmail.com">gachandles@gmail.com</a>
         <a href="https://wa.me/963944334550" target="_blank">WhatsApp: +963 944 334 550</a>
         <a href="tel:+963212672702">Office: +963 21 267 2702</a>
@@ -71,12 +70,12 @@
     </div>
     <div class="footer-col">
       <h4>Location</h4>
-      <address><p>Al Mouhafaza Street<br>Aleppo, Syria</p></address>
+      <address data-render="footerLocation"><p>Al Mouhafaza Street<br>Aleppo, Syria</p></address>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 GAC Door Handles. All rights reserved.</span>
-    <span class="gold-text">Aleppo, Syria</span>
+    <span>&copy; <span data-render="year">2025</span> GAC Door Handles. All rights reserved.</span>
+    <span class="gold-text" data-text="site.footer.city">Aleppo, Syria</span>
   </div>
 </footer>
 
@@ -92,10 +91,10 @@
 </div>
 
 <script>
-  // Load products for this category
-  const CATEGORY = 'pull-handles';
+  // Tells content.js which category of catalog.json to show on this page
+  window.CATEGORY = 'pull-handles';
 </script>
-<script src="js/products.js"></script>
 <script src="js/main.js"></script>
+<script src="js/content.js"></script>
 </body>
 </html>

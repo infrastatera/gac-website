@@ -1,0 +1,132 @@
+{
+  "pull-handles": {
+    "title": "Pull Handles",
+    "description": "Discover our stylish and durable pull handles, perfect for adding a touch of elegance to any door.",
+    "cover": "images/categories/pull-handles.jpg",
+    "products": [
+      {
+        "name": "109",
+        "image": "images/products/pull-handles/109.jpg"
+      },
+      {
+        "name": "114 Black",
+        "image": "images/products/pull-handles/114_Black.jpg"
+      },
+      {
+        "name": "9",
+        "image": "images/products/pull-handles/9.jpg"
+      }
+    ]
+  },
+  "plate-handles": {
+    "title": "Plate Handles",
+    "description": "Elevate your design with our premium plate handles, seamlessly blending functionality and sophistication.",
+    "cover": "images/categories/plate-handles.jpg",
+    "products": [
+      {
+        "name": "115",
+        "image": "images/products/plate-handles/115.jpg"
+      },
+      {
+        "name": "125",
+        "image": "images/products/plate-handles/125.jpg"
+      },
+      {
+        "name": "165",
+        "image": "images/products/plate-handles/165.jpg"
+      }
+    ]
+  },
+  "rose-handles": {
+    "title": "Rose Handles",
+    "description": "Refine your doors with our durable and charming rose handles for timeless elegance and smooth functionality.",
+    "cover": "images/categories/rose-handles.jpg",
+    "products": [
+      {
+        "name": "117",
+        "image": "images/products/rose-handles/117.jpg"
+      },
+      {
+        "name": "167",
+        "image": "images/products/rose-handles/167.jpg"
+      },
+      {
+        "name": "177",
+        "image": "images/products/rose-handles/177.jpg"
+      }
+    ]
+  },
+  "knobs": {
+    "title": "Knobs",
+    "description": "Upgrade your doors with our stylish and functional knobs, crafted for smooth operation and lasting elegance.",
+    "cover": "images/categories/knobs.jpg",
+    "products": [
+      {
+        "name": "28",
+        "image": "images/products/knobs/28.jpg"
+      },
+      {
+        "name": "30",
+        "image": "images/products/knobs/30.jpg"
+      },
+      {
+        "name": "33",
+        "image": "images/products/knobs/33.jpg"
+      }
+    ]
+  },
+  "knockers": {
+    "title": "Knockers",
+    "description": "Welcome guests with our durable knockers, marrying classic design for a lasting impression.",
+    "cover": "images/categories/knockers.jpg",
+    "products": [
+      {
+        "name": "144",
+        "image": "images/products/knockers/144.jpg"
+      },
+      {
+        "name": "148",
+        "image": "images/products/knockers/148.jpg"
+      },
+      {
+        "name": "55",
+        "image": "images/products/knockers/55.jpg"
+      }
+    ]
+  },
+  "window-handles": {
+    "title": "Window Handles & Accessories",
+    "description": "Enhance your windows with our ergonomic handles, meticulously crafted for smooth operation and lasting durability.",
+    "cover": "images/categories/window-handles.jpg",
+    "products": [
+      {
+        "name": "00",
+        "image": "images/products/window-handles/00.jpg"
+      },
+      {
+        "name": "144 A",
+        "image": "images/products/window-handles/144-A.jpg"
+      },
+      {
+        "name": "144 B",
+        "image": "images/products/window-handles/144-B.jpg"
+      },
+      {
+        "name": "177",
+        "image": "images/products/window-handles/177.jpg"
+      },
+      {
+        "name": "247",
+        "image": "images/products/window-handles/247.jpg"
+      },
+      {
+        "name": "387",
+        "image": "images/products/window-handles/387.jpg"
+      },
+      {
+        "name": "54",
+        "image": "images/products/window-handles/54.jpg"
+      }
+    ]
+  }
+}
